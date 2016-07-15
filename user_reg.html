@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Registration</title>
+</head>
+<body>
+<script>
+function validateForm() {
+     var n = document.forms["regform"]["name"].value;
+     var p1 = document.forms["regform"]["password"].value;
+     var p2 = document.forms["regform"]["passwordcfm"].value;
+     if (n == "" || p1 == "" || p2 == "" ) {
+         alert("Please input all fields.");
+         return false;
+     }
+     else if (p1 != p2) {
+      	alert("Password fields does not match.");
+        return false;
+     }
+ }
+</script>
+<form name="regform" action="register.php" method="post" onsubmit="return validateForm()"  >
+<h1>User Registration Form</h1>
+<table>
+	<tr>
+		<td><label for="name">Username</label></td>
+		<td><input name="username" id="name"></td>
+	</tr>
+	<tr>
+		<td><label for="password">Password</label></td>
+		<td><input type="password" name="password" id="password"></td>
+	</tr>
+	<tr>
+		<td><label for="passwordcfm">Confirm Password</label></td>
+		<td><input type="password" name="passwordcfm" id="passwordcfm"></td>
+	</tr>
+	<tr>
+		<td colspan="2"><input type="submit" value="Register" name="register"></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
